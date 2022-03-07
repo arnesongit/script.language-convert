@@ -34,6 +34,8 @@ class Main:
         self.updateFiles(langpath, folders, name, addonid, author)
         self.updateFolders(langpath, folders)
         xbmcgui.Dialog().ok(ADDONNAME, LANGUAGE(30002))
+        xbmc.executebuiltin("SetGUILanguage(resource.language.en_gb, true)")
+        xbmc.executebuiltin("SetGUILanguage(resource.language.de_de, true)")
 
     def getAddon(self):
         json_query = xbmc.executeJSONRPC('{"jsonrpc":"2.0", "method":"Addons.GetAddons", "params":{"properties":["enabled", "author"]}, "id":1}')
